@@ -203,7 +203,22 @@ footer {
 }
 
 
-
+.password-box {
+            position: relative;
+            width: 100%;
+        }
+        .password-box input {
+            width: 100%;
+            padding-right: 40px; /* space for the eye */
+        }
+        .toggle-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+        }
 /* Responsive */
 @media (max-width: 768px) {
     .main {
