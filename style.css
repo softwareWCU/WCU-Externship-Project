@@ -1,102 +1,223 @@
-/* ===== Common Styles for Login & Home Page ===== */
+/* ===== Common Styles ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Same as sidebar */
     color: #333;
+    #display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Header */
 header {
     background: #4a90e2;
     color: white;
     padding: 15px 20px;
     text-align: center;
     font-size: 24px;
-    
-  display: flex;
-  align-items: center;
-
-}
-
-.container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 90vh;
+    justify-content: center;
 }
 
-/* Login Box */
-.login-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 320px;
+/* Main Layout */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
 }
 
-.login-box h2 {
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    background: #ffffff;  /* Same as body */
+    padding: 20px 15px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
     text-align: center;
+    color: #4a90e2;
     margin-bottom: 20px;
 }
 
-.login-box input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Sidebar List - Attractive Style */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.login-box button {
-    width: 100%;
-    padding: 10px;
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 12px 16px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
     background: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    color: #fff;
+    transform: translateX(5px);
 }
 
-.login-box button:hover {
-    background: #357ABD;
-}
-
-/* Home Page Styles */
+/* Home Content */
 .home-content {
-    padding: 30px;
+    padding: 20px;
     text-align: center;
+    height: auto; /* takes remaining vertical space between header and footer */
+background-color:white;
+ width: 80%;
+ height: auto;
+ float: right;
+ margin-top: -490px;
 }
 
 .home-content h1 {
     font-size: 32px;
     color: #4a90e2;
+   
 }
 
 .home-content p {
     font-size: 18px;
-    margin-top: 10px;
+           /* padding around content */
+          /* remove any default top margin */
+    text-align: center;
 }
+
+/* Footer */
 footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    padding: 20px;
     width: 100%;
 }
-
-.logo-container header img.logo {
-  display: flex;
-  align-items: center;
-  max-width: 200px;
-  height: auto;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+
+/* Centering container */
+.login-wrapper {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    height: 100%;            /* full viewport height */
+}
+
+/* Login Box */
+.login-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 30px;
+    color: #4a90e2;
+    font-size: 28px;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 14px 15px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+}
+
+.login-box input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74,144,226,0.5);
+}
+
+/* Button */
+.login-box button {
+    width: 100%;
+    padding: 14px 0;
+    margin-top: 15px;
+    background: linear-gradient(45deg, #4a90e2, #50c9c3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+    background: linear-gradient(45deg, #357ABD, #3bb3b3);
+    transform: scale(1.03);
+}
+
+/* Signup link */
+.login-box .signup {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-box .signup a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-box .signup a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .login-box {
         width: 90%;
+        padding: 30px 20px;
+    }
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 50%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    .home-content {
+        width: 50%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
     }
 }
