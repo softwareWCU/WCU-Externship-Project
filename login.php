@@ -1,32 +1,27 @@
 <?php
-// login.php
-session_start();
-$conn = new mysqli("localhost","root","","your_database");
+require_once 'classes/User.php';
 
-if(isset($_POST['login'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+$user = new User();
+$error = "";
 
-    $sql = "SELECT * FROM users WHERE username='$username'";
-    $result = $conn->query($sql);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
 
-    if($result->num_rows == 1){
-        $user = $result->fetch_assoc();
-        if(password_verify($password, $user['password'])){
-            // Login successful
-            $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['username'] = $user['username'];
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            $error = "Invalid password!";
-        }
+    // Backend validation
+    if (empty($username) || empty($password)) {
+        $error = "Please fill in all fields.";
+    } elseif (strlen($username) < 3 || strlen($password) < 6) {
+        $error = "Username must be at least 3 characters and password at least 6 characters.";
     } else {
-        $error = "User not found!";
+        if ($user->login($username, $password)) {
+            header("Location: index.php");
+            exit;
+        } else {
+            $error = "Invalid username or password.";
+        }
     }
 }
+
+// You can echo $error in your existing HTML form where needed
 ?>
-
-
-
-<?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
