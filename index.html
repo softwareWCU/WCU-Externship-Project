@@ -21,6 +21,26 @@
             cursor: pointer;
             font-size: 18px;
         }
+        .error-message {
+            color: #b30000;
+            background: #ffe0e0;
+            border: 1px solid #ff9999;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .login-error {
+            color: #b30000;
+            background: #ffe0e0;
+            border: 1px solid #ff9999;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -35,6 +55,7 @@
     <div class="login-wrapper">
         <div class="login-box">
             <h2>Login</h2>
+            
             <form action="login.php"method="post">
                 <input type="text" placeholder="Username"name="username">
 

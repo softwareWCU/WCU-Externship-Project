@@ -6,15 +6,17 @@ require_once 'classes/user.php';
 
 $user = new User();
 $error = "";
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_POST['loginBtn'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
     // Backend validation
-   if (isset($_POST['loginBtn'])) {
+    if (empty($username) && empty($password)) {
         $error = "Please fill in all fields.";
-    } elseif (strlen($username) < 3 || strlen($password) < 6) {
-        $error = "Username must be at least 3 characters and password at least 6 characters.";
+    } elseif (empty($username)) {
+        $error = "Please Enter Username";
+    } elseif (empty($password)) {
+        $error = "Please Enter Password";
     } else {
         if ($user->login($username, $password)) {
             header("Location: index.php");
@@ -27,3 +29,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // You can echo $error in your existing HTML form where needed
 ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+    <?php if (!empty($error))
+        echo "<p style='color:red;'>$error</p>"; ?>
+</body>
+
+</html>
