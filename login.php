@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
 
     // Backend validation
-    if (empty($username) || empty($password)) {
+   if (isset($_POST['loginBtn'])) {
         $error = "Please fill in all fields.";
     } elseif (strlen($username) < 3 || strlen($password) < 6) {
         $error = "Username must be at least 3 characters and password at least 6 characters.";
