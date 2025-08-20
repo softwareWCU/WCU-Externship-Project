@@ -11,21 +11,21 @@ class User
         $this->conn = $db->getConnection();
     }
 
-    // Login method
+    // Login method (plain text password)
     public function login($username, $password)
     {
         $username = $this->conn->real_escape_string($username);
-        $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+        $password = $this->conn->real_escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
         $result = $this->conn->query($sql);
 
         if ($result && $result->num_rows === 1) {
             $user = $result->fetch_assoc();
-            if (password_verify($password, $user['password'])) {
-                session_start();
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-                return true;
-            }
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            return true;
         }
         return false;
     }
