@@ -239,17 +239,41 @@ footer {
         border-bottom: 1px solid #ddd;
     }
 }
-/* Dropdown */
-        .dropdown { position: relative; }
-        .caret { margin-left: auto; transition: transform .2s ease; }
-        .submenu { display: none; padding-left: 10px; }
-        .submenu a { background: #fafafa; border-radius: 6px; }
-        .submenu a:hover { background: #ddd; }
-        .dropdown.open .submenu { display: block; }
-        .dropdown.open .caret { transform: rotate(180deg); }
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
 
-        /* Also open on hover for devices that support hover (desktop) */
-        @media (hover: hover) {
-            .dropdown:hover .submenu { display: block; }
-            .dropdown:hover .caret { transform: rotate(180deg); }
-        }
+/* Dropdown menu (hidden by default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;        /* align with parent */
+    left: 100%;    /* push to the right of parent */
+    background: #34495e;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    min-width: 180px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Show menu when hovering parent */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background: #3d566e;
+}
+
+

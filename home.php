@@ -31,25 +31,9 @@ window.onunload = function() {};
 
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
-     <style>
-        .dropdown > a::after {
-            content: " ▼";
-            font-size: 12px;
-        }
-    </style>
+     
 
-    <script>
-        // Dropdown toggle script
-        document.addEventListener("DOMContentLoaded", function() {
-            let dropdowns = document.querySelectorAll(".dropdown > a");
-            dropdowns.forEach(function(drop) {
-                drop.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    this.parentElement.classList.toggle("open");
-                });
-            });
-        });
-    </script>
+    
 </head>
 
 <body >
@@ -62,31 +46,50 @@ window.onunload = function() {};
     </header>
 
     <!-- Sidebar Dashboard -->
-    <nav class="sidebar">
-        <h2>Dashboard</h2>
-        <ul>
+    <!-- Sidebar Dashboard -->
+<!-- Sidebar Dashboard -->
+<nav class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+        <li class="dropdown">
+    <a href="#">👥 Manage Users ▾</a>
+    <ul class="dropdown-menu">
+        <li><a href="upload_staff.php">⬆️ Upload Staff</a></li>
+        <li><a href="manage_users.php?status=all">👤 UserAccount</a></li>
+    </ul>
+</li>
+
+        <li><a href="logout.php">⏻ Logout</a></li>
+    </ul>
+</nav>
 
 
-             <li class="dropdown">
-                <a href="#">👥 Manage Users</a>
-                <ul>
-                    <li><a href="add_user.php">⬆️ Upload Staff</a></li>
-                    <li><a href="manage_users.php?status=all">👥Account</a></li>
-                    </ul>
-            </li>
-            <li><a href="logout.php">⏻ Logout</a>
-
-        </ul>
-    </nav>
     
     <div class="home-content">
-        <h1>Welcome to the Home Page</h1>
-        <p>This is a responsive and clean homepage with shared CSS styles.</p>
-
-    </div>
+        <h1>Welcome to the System Admin Page</h1>
+        </div>
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function(e) {
+        e.preventDefault(); // stop page reload
+        dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Close if clicked outside
+    document.addEventListener("click", function(e) {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+});
+</script>
 
 </body>
 <!--footer>
