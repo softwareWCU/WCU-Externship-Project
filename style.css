@@ -32,48 +32,60 @@ header {
 
 /* Sidebar */
 .sidebar {
-    width: 20%;
-    background: #ffffff;  /* Same as body */
-    padding: 20px 15px;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
+    width: 220px;
+    background: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
 }
 
-.sidebar h2 {
-    text-align: center;
-    color: #4a90e2;
-    margin-bottom: 20px;
-}
-
-/* Sidebar List - Attractive Style */
 .sidebar ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 12px;
+    position: relative;
 }
 
+/* Sidebar links */
 .sidebar ul li a {
-    display: block;
-    padding: 12px 16px;
-    background: #f9f9f9;
-    border-radius: 10px;
     text-decoration: none;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background: #4a90e2;
-    color: #fff;
-    transform: translateX(5px);
+    background: #34495e;
+}
+
+/* Dropdown menu (hidden by default) */
+.dropdown-menu {
+    display: none;
+    background: #34495e;
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 5px;
+}
+
+/* Show when parent hovered */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown items */
+.dropdown-menu li a {
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background: #3d566e;
 }
 
 /* Home Content */
@@ -240,16 +252,17 @@ footer {
     }
 }
 /* Dropdown */
-        .dropdown { position: relative; }
-        .caret { margin-left: auto; transition: transform .2s ease; }
-        .submenu { display: none; padding-left: 10px; }
-        .submenu a { background: #fafafa; border-radius: 6px; }
-        .submenu a:hover { background: #ddd; }
-        .dropdown.open .submenu { display: block; }
-        .dropdown.open .caret { transform: rotate(180deg); }
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 15px;
+}
 
-        /* Also open on hover for devices that support hover (desktop) */
-        @media (hover: hover) {
-            .dropdown:hover .submenu { display: block; }
-            .dropdown:hover .caret { transform: rotate(180deg); }
-        }
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    font-size: 14px;
+    padding: 6px;
+}

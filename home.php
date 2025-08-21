@@ -62,22 +62,23 @@ window.onunload = function() {};
     </header>
 
     <!-- Sidebar Dashboard -->
-    <nav class="sidebar">
-        <h2>Dashboard</h2>
-        <ul>
+    <!-- Sidebar Dashboard -->
+<!-- Sidebar Dashboard -->
+<nav class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+        <li class="dropdown">
+            <a href="#">👥 Manage Users ▾</a>
+            <ul class="dropdown-menu">
+                <li><a href="add_user.php">⬆️ Upload Staff</a></li>
+                <li><a href="manage_users.php?status=all">👤 Account</a></li>
+            </ul>
+        </li>
+        <li><a href="logout.php">⏻ Logout</a></li>
+    </ul>
+</nav>
 
 
-             <li class="dropdown">
-                <a href="#">👥 Manage Users</a>
-                <ul>
-                    <li><a href="add_user.php">⬆️ Upload Staff</a></li>
-                    <li><a href="manage_users.php?status=all">👥Account</a></li>
-                    </ul>
-            </li>
-            <li><a href="logout.php">⏻ Logout</a>
-
-        </ul>
-    </nav>
     
     <div class="home-content">
         <h1>Welcome to the Home Page</h1>
