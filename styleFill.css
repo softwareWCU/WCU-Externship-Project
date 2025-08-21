@@ -1,8 +1,25 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+/* ===== Common Styles for Login & Home Page ===== */
+=======
 /* ===== Common Styles ===== */
+>>>>>>> 307925c4784e3d7ebaa5dc1063a9aef32df99049
+=======
+/* ===== Common Styles ===== */
+>>>>>>> origin/main
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color: #ffffff;
+    color: #333;
+}
+
+=======
+=======
+>>>>>>> origin/main
     background-color: #ffffff; /* Same as sidebar */
     color: #333;
     #display: flex;
@@ -11,12 +28,82 @@ body {
 }
 
 /* Header */
+<<<<<<< HEAD
+>>>>>>> 307925c4784e3d7ebaa5dc1063a9aef32df99049
+=======
+>>>>>>> origin/main
 header {
     background: #4a90e2;
     color: white;
     padding: 15px 20px;
     text-align: center;
     font-size: 24px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    
+  display: flex;
+  align-items: center;
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    height: 90vh;
+} 
+/*
+.container2 { max-width: 900px; margin: 40px auto; padding: 0 16px; 
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    height: 90vh;
+}
+*/
+
+/* Login Box */
+.login-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #357ABD;
+}
+
+/* Home Page Styles */
+.home-content {
+    padding: 30px;
+    text-align: center;
+=======
+=======
+>>>>>>> origin/main
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,37 +165,92 @@ header {
 
 /* Home Content */
 .home-content {
-    
+    padding: 20px;
     text-align: center;
     height: auto; /* takes remaining vertical space between header and footer */
-background-color:#ffffff;
+background-color:white;
  width: 80%;
  height: auto;
  float: right;
- top: 500px;
- padding: 20px;
-   margin-top: -202px;
-    
+ margin-top: -490px;
+<<<<<<< HEAD
+>>>>>>> 307925c4784e3d7ebaa5dc1063a9aef32df99049
+=======
+>>>>>>> origin/main
 }
 
 .home-content h1 {
     font-size: 32px;
     color: #4a90e2;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
    
+>>>>>>> 307925c4784e3d7ebaa5dc1063a9aef32df99049
+=======
+   
+>>>>>>> origin/main
 }
 
 .home-content p {
     font-size: 18px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    margin-top: 10px;
+}
+=======
+=======
+>>>>>>> origin/main
            /* padding around content */
           /* remove any default top margin */
     text-align: center;
 }
 
 /* Footer */
+<<<<<<< HEAD
+>>>>>>> 307925c4784e3d7ebaa5dc1063a9aef32df99049
+=======
+>>>>>>> origin/main
 footer {
     background: #333;
     color: white;
     text-align: center;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.logo-container header img.logo {
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  height: auto;
+}
+/* Responsive */
+@media (max-width: 600px) {
+    .login-box {
+        width: 90%;
+    }
+}
+h1 { margin: 0 0 6px; }
+p.muted { color: var(--muted); margin-top: 0; }
+.card { right: 0;background:#fff; border-radius: 14px; box-shadow: 0 12px 28px rgba(0,0,0,.06); padding: 16px; }   /*  0 12 28  */
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+label { display:block; font-size: 14px; margin: 8px 0; }
+input[type="text"], input[type="email"], input[type="date"] { width:100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }    
+.sig-wrap { margin-top: 8px; border: 1px dashed #d1d5db; border-radius: 12px; background:#fff; }
+.sig-toolbar { display:flex; align-items:center; gap:8px; justify-content:space-between; padding: 8px; border-bottom:1px dashed #eee; }
+.sig-toolbar .left { display:flex; align-items:center; gap: 10px; font-weight:600; }
+.sig-toolbar .right { display:flex; gap: 8px; }
+
+canvas { width:100%; height:auto; display:block; background:#fff; touch-action: none; }
+=======
+=======
+>>>>>>> origin/main
     padding: 20px;
     width: 100%;
 }
@@ -239,17 +381,7 @@ footer {
         border-bottom: 1px solid #ddd;
     }
 }
-/* Dropdown */
-        .dropdown { position: relative; }
-        .caret { margin-left: auto; transition: transform .2s ease; }
-        .submenu { display: none; padding-left: 10px; }
-        .submenu a { background: #fafafa; border-radius: 6px; }
-        .submenu a:hover { background: #ddd; }
-        .dropdown.open .submenu { display: block; }
-        .dropdown.open .caret { transform: rotate(180deg); }
-
-        /* Also open on hover for devices that support hover (desktop) */
-        @media (hover: hover) {
-            .dropdown:hover .submenu { display: block; }
-            .dropdown:hover .caret { transform: rotate(180deg); }
-        }
+<<<<<<< HEAD
+>>>>>>> 307925c4784e3d7ebaa5dc1063a9aef32df99049
+=======
+>>>>>>> origin/main

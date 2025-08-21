@@ -20,7 +20,7 @@ class User
         $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' LIMIT 1";
         $result = $this->conn->query($sql);
 
-        if ($result && $result->num_rows === 1) {
+        if ($result > 0) {
             $user = $result->fetch_assoc();
             session_start();
             $_SESSION['user_id'] = $user['id'];
