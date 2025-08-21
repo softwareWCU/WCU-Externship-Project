@@ -14,7 +14,7 @@ if (isset($_POST['loginBtn'])) {
     if (empty($username) || empty($password)) {
         $error = "⚠ Please fill in all fields.";
     } else {
-        $sql = "SELECT password_hash,username FROM users WHERE username = ?";
+        $sql = "SELECT password_hash,username,role_id FROM users WHERE username = ? ";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
@@ -30,9 +30,16 @@ if (isset($_POST['loginBtn'])) {
                 $username=$row['username'];
                 session_start();
                  $_SESSION['username'] = $row['username'];
-                if ($password === $dbPassword) {
-                    
+                if ($password === $dbPassword &&$row['role_id']==1) {
+
                     header("Location: home.php");
+                    exit;
+                } else {
+                    $error = "❌ Invalid username or password.";
+                }
+                if ($password === $dbPassword &&$row['role_id']==2) {
+
+                    header("Location: user_feedback.php");
                     exit;
                 } else {
                     $error = "❌ Invalid username or password.";

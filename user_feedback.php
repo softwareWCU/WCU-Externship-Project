@@ -1,73 +1,72 @@
+<?php
+session_start();
 
-<!doctype html>
-<html lang="en">
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit;
+}
+// Prevent browser caching
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
+
+<!DOCTYPE html>
+<html>
+
 <head>
-    <title> General Maintenance Service Form </title>                  <!-- General Service  -->
-    <link rel="stylesheet" href="style.css">          <!--      Started from here below Please    this style is yours Alex   -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <title>Electronic Signature Form</title> -->
-  <!--
-  <style>
-                        /* ====== Minimal, clean styles ====== */ 
-    *{ box-sizing: border-box; }
-    :root { --primary: #7c3aed; --ink:#111827; --muted:#6b7280; --bg:#f6f7fb; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color:#111; }
-    .container { max-width: 900px; margin: 40px auto; padding: 0 16px; } 
-    h1 { margin: 0 0 6px; }
-    p.muted { color: var(--muted); margin-top: 0; }
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+ <script>
+window.history.forward();
+function noBack() { window.history.forward(); }
+window.onload = noBack;
+window.onpageshow = function(evt) { if(evt.persisted) noBack(); };
+window.onunload = function() {};
+</script>
 
-    .card { background:#fff; border-radius: 14px; box-shadow: 0 12px 28px rgba(0,0,0,.06); padding: 16px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-    label { display:block; font-size: 14px; margin: 8px 0; }
-    input[type="text"], input[type="email"], input[type="date"] { width:100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+     
 
-    .sig-wrap { margin-top: 8px; border: 1px dashed #d1d5db; border-radius: 12px; background:#fff; }
-    .sig-toolbar { display:flex; align-items:center; gap:8px; justify-content:space-between; padding: 8px; border-bottom:1px dashed #eee; }
-    .sig-toolbar .left { display:flex; align-items:center; gap: 10px; font-weight:600; }
-    .sig-toolbar .right { display:flex; gap: 8px; }
-
-    canvas { width:100%; height:auto; display:block; background:#fff; touch-action: none; }
-
-    .row { display:flex; align-items:center; gap: 12px; justify-content:flex-end; margin-top: 12px; }
-    .btn { appearance:none; border:0; border-radius: 10px; padding:10px 14px; background: var(--primary); color:#fff; font-weight:600; cursor:pointer; }
-    .btn.ghost { background:#eef2ff; color:#3730a3; }
-    .btn.secondary { background:#6b7280; }
-    .btn[disabled] { opacity:.6; cursor:not-allowed; }
-
-    .consent { display:flex; align-items:center; gap: 8px; margin-top: 8px; font-size: 14px; }
-    .preview { display:none; margin-top: 10px; }
-    .preview img { max-width: 10%; border:1px solid #eee; border-radius: 10px; }
-
-    .small { font-size: 12px; color: var(--muted); }
-  </style>    -->
-</head>
-<body>
-<header>
-        <div class="logo-container">
-      <img src="logo.png" alt="Website Logo" class="logo">
-    </div>
-        <h3>Utility Service Request and Provision Management  System for Wachemo University</h3></header>
-		
-
-
-  <div class="container">
-          <!-- Sidebar Dashboard -->
-        <nav class="sidebar">
-            <h2>Dashboard</h2>
-            <ul>
-                <li><a href="#">ðŸ  Home</a></li>
-                <li><a href="#">ðŸ“© New Requests</a></li>
-                <li><a href="#">âš™ï¸ In Progress</a></li>
-                <li><a href="#">âœ… Completed</a></li>
-                <li><a href="#">ðŸ’° Billing Issues</a></li>
-                <li><a href="#">ðŸ”” Notifications</a></li>
-                <li><a href="#">ðŸ‘¤ User Accounts</a></li>
-            </ul>
-        </nav>
-	<!-- </div> -->
     
-   <!-- <div class="container2">  -->
+</head>
+
+<body >
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Website Logo" class="logo">
+        </div>
+        <h3>Utility Service Request and Provision Management System for Wachemo University</h3>
+    
+    </header>
+
+    <!-- Sidebar Dashboard -->
+    <!-- Sidebar Dashboard -->
+<!-- Sidebar Dashboard -->
+<nav class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+        <li class="dropdown">
+    <a href="#">👥 Service ▾</a>
+    <ul class="dropdown-menu">
+        <li><a href="upload_staff.php">📤 Send Request</a></li>
+        <li><a href="user_feedback.php">📝FeedBack</a></li>
+    </ul>
+</li>
+
+        <li><a href="logout.php">⏻ Logout</a></li>
+    </ul>
+</nav>
+
+
+    
+    <div class="home-content">
+        <!-- <div class="container2">  -->
     <form class="card" id="esign-form" method="post" action="#" onsubmit="return handleSubmit(event)"> 
 	   <h1 style="text-align: center;"> General Maintenance Service and Feedback </h1>
        <div class="grid">
@@ -328,5 +327,33 @@
     new ResizeObserver(resizeCanvas).observe(canvas);
     resizeCanvas();
   </script>
+        </div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+
+    dropdownToggle.addEventListener("click", function(e) {
+        e.preventDefault(); // stop page reload
+        dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Close if clicked outside
+    document.addEventListener("click", function(e) {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = "none";
+        }
+    });
+});
+</script>
+
 </body>
+<!--footer>
+    &copy; 2025 Externship Group-AAP | All rights reserved.
+</footer-->
+
 </html>

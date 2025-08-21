@@ -54,7 +54,7 @@ window.onunload = function() {};
         <li class="dropdown">
     <a href="#">👥 Manage Users ▾</a>
     <ul class="dropdown-menu">
-        <li><a href="add_user.php">⬆️ Upload Staff</a></li>
+        <li><a href="upload_staff.php">⬆️ Upload Staff</a></li>
         <li><a href="manage_users.php?status=all">👤 UserAccount</a></li>
     </ul>
 </li>
