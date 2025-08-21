@@ -31,6 +31,7 @@ if (isset($_POST['loginBtn'])) {
                 session_start();
                  $_SESSION['username'] = $row['username'];
                 if ($password === $dbPassword) {
+                    
                     header("Location: home.php");
                     exit;
                 } else {
