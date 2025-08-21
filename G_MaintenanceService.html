@@ -1,0 +1,332 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title> General Maintenance Service Form </title>                  <!-- General Service  -->
+    <link rel="stylesheet" href="styleFill.css">          <!--      Started from here below Please    this style is yours Alex   -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- <title>Electronic Signature Form</title> -->
+  <!--
+  <style>
+                        /* ====== Minimal, clean styles ====== */ 
+    *{ box-sizing: border-box; }
+    :root { --primary: #7c3aed; --ink:#111827; --muted:#6b7280; --bg:#f6f7fb; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color:#111; }
+    .container { max-width: 900px; margin: 40px auto; padding: 0 16px; } 
+    h1 { margin: 0 0 6px; }
+    p.muted { color: var(--muted); margin-top: 0; }
+
+    .card { background:#fff; border-radius: 14px; box-shadow: 0 12px 28px rgba(0,0,0,.06); padding: 16px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    label { display:block; font-size: 14px; margin: 8px 0; }
+    input[type="text"], input[type="email"], input[type="date"] { width:100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px; }
+
+    .sig-wrap { margin-top: 8px; border: 1px dashed #d1d5db; border-radius: 12px; background:#fff; }
+    .sig-toolbar { display:flex; align-items:center; gap:8px; justify-content:space-between; padding: 8px; border-bottom:1px dashed #eee; }
+    .sig-toolbar .left { display:flex; align-items:center; gap: 10px; font-weight:600; }
+    .sig-toolbar .right { display:flex; gap: 8px; }
+
+    canvas { width:100%; height:auto; display:block; background:#fff; touch-action: none; }
+
+    .row { display:flex; align-items:center; gap: 12px; justify-content:flex-end; margin-top: 12px; }
+    .btn { appearance:none; border:0; border-radius: 10px; padding:10px 14px; background: var(--primary); color:#fff; font-weight:600; cursor:pointer; }
+    .btn.ghost { background:#eef2ff; color:#3730a3; }
+    .btn.secondary { background:#6b7280; }
+    .btn[disabled] { opacity:.6; cursor:not-allowed; }
+
+    .consent { display:flex; align-items:center; gap: 8px; margin-top: 8px; font-size: 14px; }
+    .preview { display:none; margin-top: 10px; }
+    .preview img { max-width: 10%; border:1px solid #eee; border-radius: 10px; }
+
+    .small { font-size: 12px; color: var(--muted); }
+  </style>    -->
+</head>
+<body>
+<header>
+        <div class="logo-container">
+      <img src="logo.png" alt="Website Logo" class="logo">
+    </div>
+        <h3>Utility Service Request and Provision Management  System for Wachemo University</h3></header>
+		
+
+
+  <div class="container">
+          <!-- Sidebar Dashboard -->
+        <nav class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#">ðŸ  Home</a></li>
+                <li><a href="#">ðŸ“© New Requests</a></li>
+                <li><a href="#">âš™ï¸ In Progress</a></li>
+                <li><a href="#">âœ… Completed</a></li>
+                <li><a href="#">ðŸ’° Billing Issues</a></li>
+                <li><a href="#">ðŸ”” Notifications</a></li>
+                <li><a href="#">ðŸ‘¤ User Accounts</a></li>
+            </ul>
+        </nav>
+	<!-- </div> -->
+    
+   <!-- <div class="container2">  -->
+    <form class="card" id="esign-form" method="post" action="#" onsubmit="return handleSubmit(event)"> 
+	   <h1 style="text-align: center;"> General Maintenance Service and Feedback </h1>
+       <div class="grid">
+       <fieldset>
+	   <legend>  General Service Customer </legend>
+	    <label>First Name* <input type="text" name="fn" required maxlength="120">    </label> <!-- <input type="text" name="fn" required maxlength="120">    </label>  -->
+		<label>Second Name* <input type="text" name="sn" required maxlength="120">    </label>
+        <label for="sex">Service Issuing Dep't: <input type="text" name="fn" required maxlength="120">  </label> 
+		<label for="position">Service Type: 	
+					   <select> <option value=""> Something</option>
+					   <option value="Property Directorate">Change Door Cylinder </option>  
+					   <option value="General Service Coordinator">Door Maintenance</option> 
+					   <option value="Water Department Coordinator">Teaching Room Coordination</option>
+					   <option value="Electricity Department Coordinator">Office Coordination</option>
+					   <option value="Building Renewal Department Coordinator">Electricity Wiring </option>
+					    <option value="Property Directorate">Building Renewal </option>  
+					   <option value="General Service Coordinator">Building Painting</option> 
+					   <option value="Water Department Coordinator">Water Plumper</option>
+					   <option value="Electricity Department Coordinator">Molding</option>
+					   <option value="Building Renewal Department Coordinator">Electricity Breaker Problem</option>
+                       <option value="Teaching and Office Room Coordinator">Chair and other</option> 
+					   <option value="ICT Directorate">Building Block Posting</option>
+					   </select> </label> 					   
+        <label for="sex">Service Place: <input type="text" name="fn" required maxlength="120">  </label> 
+		<label for="date">Request Issuing Date:<input type="date" name="signed_date">  </label> <label for="time">Time:<input type="time" name="time">  </label> 			                      
+        <label for="msg">Message: <textarea name="msg" rows="5" cols="30"> </textarea> </label>
+		</fieldset>
+       <fieldset>
+	   <legend>  General Service Officer </legend>
+		<label for="sex">Service Accomplishing by Dep't: 
+					   <select> <option value=""> Something</option>
+					   <option value="General Service Coordinator">General Service Coordinator</option> 
+					   <option value="Water Department Coordinator">Water Dep't Coordinator</option>
+					   <option value="Electricity Department Coordinator">Electricity Dep't Coordinator</option>
+					   <option value="Building Renewal Department Coordinator">Building Renewal Coordinator</option>
+                       <option value="Teaching and Office Room Coordinator">Teaching & Office Coordinator</option> 
+					   </select> </label> 	
+        <label for="sex">Service Accomplishing Officer: <input type="text" name="fn" required maxlength="120">  </label> 
+        <label for="date">Officer Assigned Date:<input type="date" name="signed_date">	</label> 
+        <label for="time">Time:<input type="time" name="time">  </label> <br>
+		<fieldset>
+	   <legend> List of Materials to be Maintained  </legend>
+		 <label for="sex"> <!-- List of Materials to be Maintained:  -->
+		<table>
+        <tr>
+            <th>Lists Number </th>
+            <th>Material to be Maintained</th>
+            <th>Measurement</th>
+			<th>Unit Number</th>
+			<th>Remark</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+			<td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>2.</td>
+			<td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr> 
+		    <td>3.</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>  <p> Suggestions [...................................................................................] </p>
+	</fieldset>
+	   <fieldset>
+	  <legend> Coordinator Assurance  </legend>
+	  <label for="sex">Position: 
+					   <select> <option value=""> Something</option>
+					   <option value="General Service Coordinator">General Service Coordinator</option> 
+					   <option value="Water Department Coordinator">Water Dep't Coordinator</option>
+					   <option value="Electricity Department Coordinator">Electricity Dep't Coordinator</option>
+					   <option value="Building Renewal Department Coordinator">Building Renewal Coordinator</option>
+                       <option value="Teaching and Office Room Coordinator">Teaching & Office Coordinator</option> 
+					   </select> </label> 	  
+	  </fieldset>
+		</fieldset>
+        </div>	`
+
+      <div class="sig-wrap">
+        <div class="sig-toolbar">
+          <div class="left">Signature Approval</div>
+          <div class="right">
+            <button type="button" class="btn ghost" id="undo-btn" title="Undo last stroke" disabled>Undo</button>
+            <button type="button" class="btn ghost" id="clear-btn" title="Clear">Clear</button>
+          </div>
+        </div>
+         <canvas id="pad" width="1000" height="260" aria-label="Signature pad"> </canvas>
+        <!-- <div class="small" style="padding:8px">By signing, you consent to use of electronic records and signatures.</div>
+      </div>   -->
+
+      <label class="consent">
+        <input type="checkbox" id="consent" required> I confirm this is my legal signature.
+      </label>
+
+      <div class="row">
+        <button type="button" class="btn secondary" id="download-btn" disabled>Download PNG</button>
+        <button type="submit" class="btn" id="submit-btn" disabled>Submit</button>
+      </div>
+     
+      <!-- Hidden input that will carry the base64 PNG when submitting to a server -->
+     <!-- <input type="hidden" name="signature_data" id="signature_data">
+
+      <div class="preview" id="preview">
+        <p class="small">Preview (generated from the canvas):</p>
+        <img id="preview-img" alt="Signature preview" />
+      </div>     -->
+	  
+    </form>
+  </div>
+
+  <script>
+    // ====== Simple signature pad (vanilla JS) with undo & clear ======
+    const canvas = document.getElementById('pad');
+    const ctx = canvas.getContext('2d');
+    const clearBtn = document.getElementById('clear-btn');
+    const undoBtn = document.getElementById('undo-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const downloadBtn = document.getElementById('download-btn');
+    const consent = document.getElementById('consent');
+    const hidden = document.getElementById('signature_data');
+    const preview = document.getElementById('preview');
+    const previewImg = document.getElementById('preview-img');
+
+    // Drawing configuration
+    let drawing = false;
+    let hasInk = false;
+    let strokes = []; // each stroke is an array of points [{x,y}, ...]
+    let currentStroke = [];
+
+    // HiDPI support + responsive fit
+    function resizeCanvas() {
+      const ratio = window.devicePixelRatio || 1;
+      const displayedWidth = canvas.clientWidth || canvas.parentElement.clientWidth;
+      const targetWidth = Math.max(600, displayedWidth);
+      const height = 260; // CSS height reference
+      canvas.width = Math.floor(targetWidth * ratio);
+      canvas.height = Math.floor(height * ratio);
+      canvas.style.height = height + 'px';
+      canvas.style.width = '100%';
+      ctx.setTransform(1,0,0,1,0,0); // reset transform before scaling
+      ctx.scale(ratio, ratio);
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink') || '#111827';
+      redraw();
+    }
+
+    function redraw(){
+      // clear
+      ctx.clearRect(0,0,canvas.width, canvas.height);
+      // baseline
+      ctx.save();
+      ctx.setLineDash([6, 6]);
+      ctx.strokeStyle = '#e5e7eb';
+      ctx.beginPath();
+      ctx.moveTo(12, canvas.height / (window.devicePixelRatio||1) - 24);
+      ctx.lineTo(canvas.width / (window.devicePixelRatio||1) - 12, canvas.height / (window.devicePixelRatio||1) - 24);
+      ctx.stroke();
+      ctx.restore();
+      // strokes
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--ink') || '#111827';
+      for (const s of strokes) drawStroke(s);
+      if (currentStroke.length) drawStroke(currentStroke);
+    }
+
+    function drawStroke(s){
+      if (s.length < 2) return;
+      ctx.beginPath();
+      ctx.moveTo(s[0].x, s[0].y);
+      for (let i=1;i<s.length;i++) ctx.lineTo(s[i].x, s[i].y);
+      ctx.stroke();
+    }
+
+    function getPos(e){
+      const rect = canvas.getBoundingClientRect();
+      if (e.touches && e.touches[0]) {
+        return { x: (e.touches[0].clientX - rect.left), y: (e.touches[0].clientY - rect.top) };
+      }
+      return { x: (e.clientX - rect.left), y: (e.clientY - rect.top) };
+    }
+
+    function start(e){ drawing = true; currentStroke = []; const p = getPos(e); currentStroke.push(p); e.preventDefault(); }
+    function move(e){ if (!drawing) return; const p = getPos(e); currentStroke.push(p); redraw(); e.preventDefault(); }
+    function end(){ if (!drawing) return; drawing = false; if (currentStroke.length>1) { strokes.push(currentStroke); hasInk = true; } currentStroke = []; updateControls(); redraw(); }
+
+    // Events (mouse + touch)
+    canvas.addEventListener('mousedown', start);
+    canvas.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+    canvas.addEventListener('touchstart', start, {passive:false});
+    canvas.addEventListener('touchmove', move, {passive:false});
+    canvas.addEventListener('touchend', end);
+
+    // Controls
+    clearBtn.addEventListener('click', () => { strokes = []; currentStroke = []; hasInk = false; updateControls(); redraw(); });
+    undoBtn.addEventListener('click', () => { if (strokes.length) { strokes.pop(); hasInk = strokes.length>0; updateControls(); redraw(); }});
+    consent.addEventListener('change', updateControls);
+
+    function updateControls(){
+      const enabled = hasInk && consent.checked;
+      submitBtn.disabled = !enabled;
+      downloadBtn.disabled = !enabled;
+      undoBtn.disabled = strokes.length === 0;
+      // preview
+      if (hasInk) {
+        const dataUrl = canvas.toDataURL('image/png');
+        previewImg.src = dataUrl;
+        preview.style.display = 'block';
+      } else {
+        preview.style.display = 'none';
+      }
+    }
+
+    function exportPNG(){
+      // Create an offscreen canvas to render strokes at CSS scale for crisp output
+      const w = Math.floor(canvas.clientWidth || canvas.width/(window.devicePixelRatio||1));
+      const h = Math.floor(parseInt(canvas.style.height) || 260);
+      const off = document.createElement('canvas');
+      off.width = w; off.height = h;
+      const c = off.getContext('2d');
+      c.lineWidth = 2; c.lineCap='round'; c.lineJoin='round'; c.strokeStyle = '#111827';
+      // baseline
+      c.setLineDash([6,6]); c.strokeStyle='#e5e7eb'; c.beginPath(); c.moveTo(12, h-24); c.lineTo(w-12, h-24); c.stroke(); c.setLineDash([]); c.strokeStyle='#111827';
+      // draw strokes
+      for (const s of strokes) {
+        if (s.length<2) continue; c.beginPath(); c.moveTo(s[0].x, s[0].y); for (let i=1;i<s.length;i++) c.lineTo(s[i].x, s[i].y); c.stroke();
+      }
+      return off.toDataURL('image/png');
+    }
+
+    downloadBtn.addEventListener('click', () => {
+      const url = exportPNG();
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'signature.png';
+      a.click();
+    });
+
+    // Submit handler: put PNG into hidden input. Replace action="#" with your server endpoint when integrating.
+    window.handleSubmit = function(e){
+      e.preventDefault();
+      if (!hasInk || !consent.checked) return false;
+      const dataUrl = exportPNG();
+      hidden.value = dataUrl; // base64 PNG you can POST to your backend
+      alert('Signature captured! The base64 PNG has been placed in the hidden input named \"signature_data\".\nHook up the form action to your server to save it.');
+      return false;
+    }
+
+    // Initialize
+    new ResizeObserver(resizeCanvas).observe(canvas);
+    resizeCanvas();
+  </script>
+</body>
+</html>
