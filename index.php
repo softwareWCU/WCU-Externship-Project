@@ -14,7 +14,7 @@ if (isset($_POST['loginBtn'])) {
     if (empty($username) || empty($password)) {
         $error = "⚠ Please fill in all fields.";
     } else {
-        $sql = "SELECT password_hash,username,role_id FROM users WHERE username = ? ";
+        $sql = "SELECT password,username,staff_type FROM staff WHERE username = ? ";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
@@ -26,18 +26,18 @@ if (isset($_POST['loginBtn'])) {
 
             if ($result && $result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                $dbPassword = $row['password_hash'];
-                $username=$row['username'];
+                $dbPassword = $row['password'];
+                $username = $row['username'];
                 session_start();
-                 $_SESSION['username'] = $row['username'];
-                if ($password === $dbPassword &&$row['role_id']==1) {
+                $_SESSION['username'] = $row['username'];
+                if (password_verify($password, $dbPassword) && $row['staff_type'] =="admin") {
 
                     header("Location: home.php");
                     exit;
                 } else {
                     $error = "❌ Invalid username or password.";
                 }
-                if ($password === $dbPassword &&$row['role_id']==2) {
+                if ($password === $dbPassword && $row['staff_type'] == "academic") {
 
                     header("Location: user_feedback.php");
                     exit;
@@ -59,7 +59,7 @@ if (isset($_POST['loginBtn'])) {
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
         .password-box {
             position: relative;
@@ -94,8 +94,8 @@ if (isset($_POST['loginBtn'])) {
         <div class="logo-container">
             <img src="logo.png" alt="Website Logo" class="logo">
         </div>
-        <h3>Utility Service Request and Provision Management
-            System for Wachemo University</h3>
+        <h2>Wachemo University</h2><br>
+        <h3>Support Request Management System(SRMS)</h3>
     </header>
 
     <div class="login-wrapper">

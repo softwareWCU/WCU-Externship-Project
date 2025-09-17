@@ -1,0 +1,18 @@
+{
+    "name": "user/wcu-externship-project",
+    "autoload": {
+        "psr-4": {
+            "User\\WcuExternshipProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alemayehu Shemebo",
+            "email": "shemebo2008@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^5.1",
+        "phpmailer/phpmailer": "^6.10"
+    }
+}

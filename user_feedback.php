@@ -41,8 +41,8 @@ window.onunload = function() {};
         <div class="logo-container">
             <img src="logo.png" alt="Website Logo" class="logo">
         </div>
-        <h3>Utility Service Request and Provision Management System for Wachemo University</h3>
-    
+         <h2>Wachemo University</h2><br>
+        <h3>Support Request Management System(SRMS)</h3>
     </header>
 
     <!-- Sidebar Dashboard -->

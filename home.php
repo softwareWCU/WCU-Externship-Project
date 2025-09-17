@@ -41,8 +41,8 @@ window.onunload = function() {};
         <div class="logo-container">
             <img src="logo.png" alt="Website Logo" class="logo">
         </div>
-        <h3>Utility Service Request and Provision Management System for Wachemo University</h3>
-    
+        <h2>Wachemo University</h2><br>
+        <h3>Support Request Management System(SRMS)</h3> 
     </header>
 
     <!-- Sidebar Dashboard -->
@@ -55,7 +55,7 @@ window.onunload = function() {};
     <a href="#">👥 Manage Users ▾</a>
     <ul class="dropdown-menu">
         <li><a href="upload_staff.php">⬆️ Upload Staff</a></li>
-        <li><a href="manage_users.php?status=all">👤 UserAccount</a></li>
+        <li><a href="create_account.php?status=all">👤 UserAccount</a></li>
     </ul>
 </li>
 
